@@ -1,0 +1,37 @@
+Tools/softwares Required: Node.js and Cypress
+Application: https://emicalculator.net/
+
+UI Test:
+Test Case-1: Validate the EMI pie chart
+Steps:
+1. Launch the above mentioned application URL
+2. Go to Home Loan tab
+3. Provide the below mentioned values in application and calculate the EMI in the code and validate output of your code with numbers in application, both should match.
+           Ex: 
+              1. Home Loan Amount: 25L, Interest Rate: 10%, Tenure: 10 Years
+              2. Home Loan Amount: 50L, Interest Rate: 7.5%, Tenure: 15 Years
+4. Check availability of pie chart
+5. Read the numbers from both the sections of the pie chart and Pass the step if its greater than zero, else fail it. 
+
+
+Test Case-2: Validate the EMI bar chart
+Steps:
+1. Launch the above mentioned application URL
+2. Go to Personal Loan tab
+3. Move the slider for "Personal Loan Amount", "Interest Rate", "Loan Tenure" text boxes for below mentioned values,
+          Ex: 
+              1. Personal Loan Amount: 10L, Interest Rate: 12%, Tenure: 5 Years
+4. Change the Month from "Schedule showing EMI payments starting from" calendar widget
+5. Check availability of bar chart
+6. Count number of bars available
+7. Read the values from any one bar tool tip
+
+
+API Test:
+Test Case-3: Validate the parameters of API
+Pre-requisite: 
+1. Store "ID", "email", "first_name", "last_name" in CSV or JSON from the response of API "https://reqres.in/api/users?page=2", and please keep the file in location "cypress/fixtures"
+Steps:
+1. Access the API "https://reqres.in/api/users?page=2"
+2. Check for response status code, PASS the step if its "200 OK" or else fail it
+3. Validate the "ID", "email", "first_name", "last_name" from responses for all users with Fixtures.
